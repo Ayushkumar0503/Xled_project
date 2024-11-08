@@ -1,0 +1,52 @@
+{
+    "articles": [
+      {
+        "source": { "id": "cnn", "name": "CNN" },
+        "author": "Catherine Thorbecke",
+        "title": "Elon Musk says fees for some users may be coming to Twitter",
+        "description": "Elon Musk said Twitter might soon charge fees for certain users, as the billionaire continues to tease how he might change the platform as its new owner.",
+        "url": "https://www.cnn.com/2022/05/04/tech/elon-musk-twitter-fee/index.html",
+        "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/220504143626-elon-musk-050222.jpg?c=16x9&q=w_800,c_fill",
+        "publishedAt": "2022-05-04T18:50:44Z",
+        "content": "Elon Musk said Twitter might soon charge fees for certain users, as the billionaire continues to tease how he might change the platform as its new owner."
+      },
+     
+      {
+        "source": { "id": "cnn", "name": "CNN" },
+        "author": "Rachel Ramirez",
+        "title": "Stanford University announces new climate change school with $1.1 billion from renowned venture capitalist",
+        "description": "Stanford University announced Wednesday it is launching a new school later this year focused on climate change and funded by John Doerr, a renowned Silicon Valley venture capitalist.",
+        "url": "https://www.cnn.com/2022/05/04/us/stanford-university-climate-school/index.html",
+        "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/220504131533-stanford-campus-2020-file.jpg?c=16x9&q=w_800,c_fill",
+        "publishedAt": "2022-05-04T18:25:16Z",
+        "content": "Stanford University announced Wednesday it is launching a new school later this year focused on climate change and funded by John Doerr."
+      }
+      ,
+        {
+          "source": { "id": "cnn", "name": "CNN" },
+        "author": "Rachel Ramirez",
+          "title": "Best 75-inch 4K TVs to buy in 2021",
+          "urlToImage": "https://cdn.mos.cms.futurecdn.net/WjJPsW2H3SPY7bYyEDXkBg.jpg",
+          "dateTime": "11 November 2021",
+          "link": "https://www.techradar.com/in/news/best-75-inch-4k-tvs"
+        },
+        {
+          "source": { "id": "cnn", "name": "CNN" },
+        "author": "Rachdggel ez",
+          "title": "iCloud for Windows now has its own password generator",
+          "urlToImage": "https://cdn.mos.cms.futurecdn.net/8NaCGfyPvLtbFtZGn5HCCM.jpg",
+          "dateTime": "11 November 2021",
+          "link": "https://www.techradar.com/in/news/icloud-for-windows-now-has-its-own-password-generator"
+        },
+        {
+          "source": { "id": "cnn", "name": "CNN" },
+          "author": "Rachel Ramxzirez",
+          "title": "Disney Plus will offer Imax versions of Marvel films – including Shang-Chi",
+          "urlToImage": "https://cdn.mos.cms.futurecdn.net/JAD8zZZkcvokkcGEE8Yc4k.jpg",
+          "dateTime": "11 November 2021",
+          "link": "https://www.techradar.com/in/news/disney-plus-will-offer-imax-versions-of-marvel-films-including-shang-chi"
+        }
+      
+    ]
+  }
+  

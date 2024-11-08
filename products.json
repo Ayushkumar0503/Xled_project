@@ -1,0 +1,131 @@
+[
+    {
+        "id": 1,
+        "image": "./public/image/F-300x300.png",
+        "name": "LED Video For Display Screen Rental For Events-E23H 500x1000",
+        "category": "Event Display", 
+        "description": "Event Display is designed for high-quality visual performance for events and presentations."
+    },
+    
+    {
+        "id": 2,
+        "image": "./public/image/e23h-f-300x300.png",
+        "name": "LED Video For Display Screen Rental For Events-E23H",
+        "category": "Event Display",
+        "description": "Event Display is designed for high-quality visual performance for events and presentations."
+    },
+    {
+        "id": 3,
+        "image": "./public/image/E23E.3-300x300.jpg",
+        "name": "LED Video For Display Screen Rental For Events-E23E",
+        "category": "Event Display",
+        "description": "Event Display is designed for high-quality visual performance for events and presentations."
+    
+    },
+    {
+        "id": 4,
+        "image": "./public/image/9cd8b48bad7f1732d0ba89-300x300.jpg",
+        "name": "576×576mm Rental Cabinet LED Video For Display-E23C",
+        "category": "Event Display",
+        "description": "Event Display is designed for high-quality visual performance for events and presentations."
+    },
+    
+    {
+        "id": 5,
+        "image": "./public/image/80e6b1555ed829d1271a1-300x300.jpg",
+        "name": "LED video display for Events-E23D-Uninak",
+        "category": "Event Display",
+         "description": "Event Display is designed for high-quality visual performance for events and presentations."
+
+    },
+    {
+        "id": 6,
+        "image": "./public/image/E22N-2-300x300.jpg",
+        "name": "500×500mm XR LED Video Display for Events-XR23A",
+        "category": "Event Display",
+         "description": "Event Display is designed for high-quality visual performance for events and presentations."
+    },
+    {
+        "id": 7,
+        "image": "./public/image/81-768x768.jpg",
+        "name": "LED Video Display For Billbaord-B22J",
+        "category": "Billboard Display",
+        "description": "Billboard Display offers vibrant visuals and is ideal for outdoor advertising."
+
+    },
+    {
+        "id": 8,
+        "image": "./public/image/20d4d9ad01f61f89c8ff3.png",
+        "name": "LED Display Billbaord-B20D",
+        "category": "Billboard Display",
+        "description": "Billboard Display offers vibrant visuals and is ideal for outdoor advertising."
+
+    },
+    {
+        "id": 9,
+        "image": "./public/image/F23C-2-768x768.jpg",
+        "name": "Indoor Fine Pitch LED video display-F23C",
+        "category": "Fine Pitch Display",
+          "description": "Fine Pitch Display uses mini LED with excellent visual performance, slim and light display design."
+    } , {
+        "id": 10,
+        "image": "./public/image/F23B-Z-768x768.jpg",
+        "name": "Indoor Fine Pitch LED video display-F23B-Uninak",
+        "category": "Fine Pitch Display",
+          "description": "Fine Pitch Display uses mini LED with excellent visual performance, slim and light display design."
+    }   , {
+        "id": 11,
+        "image": "./public/image/d767a2810ad63afb1dc9996e311d135.jpg",
+        "name": "Perimeter Display-PD21C",
+        "category": "Perimeter Display"
+    }
+    , {
+        "id": 12,
+        "image": "./public/image/eea202245a456c2f29f128-768x466.png",
+        "name": "3D billboard-3D21A",
+        "category": "3D Billboard"
+    }  , {
+        "id": 13,
+        "image": "./public/image/be51eb159dee98335243154a50de193-1.png",
+        "name": "Dance Floor Display Series DF21A",
+        "category": "Dance Floor Display"
+        
+    } 
+    , {
+        "id": 14,
+        "image": "./public/image/aed7b85a67eaff244f62394d35120ea.png",
+        "name": "Iron Fixed Display-IF19A",
+        "category": "Iron Fixed Display",
+         "description": "Fine Pitch Display uses mini LED with excellent visual performance, slim and light display design."
+        
+    } ,
+    {
+        "id": 15,
+        "image": "./public/image/ffc025a35475475ba410225ec212d5a-768x768 copy.png",
+        "name": "Iron Fixed Display-IF19C",
+        "category": "Iron Fixed Display", 
+        "description": "Fine Pitch Display uses mini LED with excellent visual performance, slim and light display design."
+        
+    },
+    {
+        "id": 16,
+        "image": "./public/image/d95647d459508e13bcbb56-768x576.png",
+        "name": "Iron Fixed Display-IF19B",
+        "category": "Iron Fixed Display"
+        
+    },
+       {
+        "id": 17,
+        "image": "./public/image/29173b1b1b48c383ae726056697369a-768x470.png",
+        "name": "Transparent Display Series TD20B",
+        "category": "Transparent Display"
+        
+    },
+    {
+        "id": 18,
+        "image": "./public/image/751590186a4e4c467c5ce7f52ed1199-768x1024.jpg",
+        "name": "Right Angle Screen-RA21A",
+        "category": "Right Angle Screen"
+        
+    }
+]

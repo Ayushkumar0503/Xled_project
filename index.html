@@ -137,6 +137,41 @@ i{
 }
 
 
+/* Hide the search dropdown by default */
+.search-dropdown {
+    display: none;
+    position: absolute;
+    top: 120px; /* Adjust based on the height of your nav */
+    right: 20px;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+/* Style for the search input */
+.search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-dropdown button {
+    background-color: #ff3a03;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Show dropdown when 'show' class is added */
+.show {
+    display: block;
+}
+
 
 /* Update the media queries to hide the nav menu by default on small screens */
 @media only screen and (max-width: 768px) {
@@ -203,6 +238,31 @@ i{
         font-size: 24px; /* adjust the icon size */
     }
 
+#search-icon{
+  color: white;
+  font-size: 20px;
+}
+.search-dropdown {
+    position: absolute;
+    top: 70px; 
+    padding: 2px;/* Adjust based on the height of your nav */
+}
+.search-input {
+   
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-dropdown button {
+    background-color: #ff3a03;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 }
 .carousel-section {
     padding: 10px 20px;
@@ -684,8 +744,9 @@ i{
                 <span>Tel us: +86-755-28397030</span>
             </div>
             <div class="other-links">
-                <a href="#">About</a>
+                <a href="./about.html">About</a>
                 <a href="#">Contact</a>
+                <div style="color: #fffdfd;background-color:red;padding:3px;">Get A  Quote</div>
             </div>
         </div>
         <nav>
@@ -697,12 +758,12 @@ i{
                 <li class="dropdown">
                     <a href="./product.html">Product <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="#">LED Displays</a></li>
-                        <li><a href="#">Outdoor Screens</a></li>
-                        <li><a href="#">Digital Billboards</a></li>
+                        <li><a href="./product.html">LED Displays</a></li>
+                        <li><a href="./product.html">Outdoor Screens</a></li>
+                        <li><a href="./product.html">Digital Billboards</a></li>
                     </ul>
                 </li>
-                <li><a href="#">News</a></li>
+                <li><a href="./news.html">News</a></li>
                 <li class="dropdown">
                     <a href="#">Showcase     <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-content">
@@ -710,7 +771,7 @@ i{
                         <li><a href="#">Gallery</a></li>
                     </ul>
                 </li>
-                <li><a href="#">About</a></li>
+                <li><a href="./about.html">About</a></li>
                 <li class="dropdown">
                     <a href="#">Contact Us  <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-content">
@@ -726,8 +787,8 @@ i{
                         <li><a href="#">Electric-power box</a></li>
                     </ul>
                 </li>
-                <li><a href="#" class="quote">Get a Quote</a></li>
-                <li><a href="#" class="quote">Guest visits</a></li>
+                <li><a href="./getquote.html" class="quote">Get a Quote</a></li>
+                <li><a href="./guest.html" class="quote">Guest visits</a></li>
                 
                 <li class="search-icon">
                     <i class="fas fa-search" id="searchIcon"></i>
@@ -736,7 +797,11 @@ i{
             <button class="toggle-button">
                 <i class="fas fa-bars"></i>
             </button>
- 
+            <!-- Hidden Search Dropdown -->
+    <div class="search-dropdown" id="searchDropdown">
+        <input type="text" placeholder="Search..." class="search-input">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
         </nav>
     </header>
     
@@ -846,6 +911,31 @@ i{
                 <img src="./public/image/aboutimg.jpg" alt="Building Image">
             </div>
         </div>
+        <div class="contact-section">
+            <h2>CONTACT</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="./public/image/aac.jpg" alt="Forrest Liu">
+                    <h3>Forrest Liu</h3>
+                    <p>CEO</p>
+                    <p>Telephone: +86 186 8877 7929</p>
+                    <p>Email: <a href="mailto:forrest.liu@uninak.com">forrest.liu@uninak.com</a></p>
+                </div>
+                <div class="team-member">
+                    <img src="./public/image/vgg.jpg" alt="Hanna Zhou">
+                    <h3>Hanna Zhou</h3>
+                    <p>Vice President</p>
+                    <p>Telephone: +86 137 6020 9407</p>
+                    <p>Email: <a href="mailto:hanna.zhou@uninak.com">hanna.zhou@uninak.com</a></p>
+                </div>
+                <div class="team-member">
+                    <img src="./public/image/bcccjpg.jpg" alt="Shirley Luo">
+                    <h3>Shirley Luo</h3>
+                    <p>Sales</p>
+                    <p>Telephone: +86 139 2385 2961</p>
+                    <p>Email: <a href="mailto:shirley.luo@uninak.com">shirley.luo@uninak.com</a></p>
+                </div>
+            </div>
             
         <div class="container2">
             <div class="contact-info">
@@ -919,7 +1009,7 @@ i{
                 <a href="#">T-brisun</a>
             </div>
             <div class="copyright">
-                <p>Copyright © 2021 Ayushkumar All Rights Reserved.</p>
+                <p>Copyright © 2021 Uninak Vision All Rights Reserved.</p>
             </div>
         </footer>
         

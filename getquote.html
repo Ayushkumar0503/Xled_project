@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>News about Donald Trump</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .top-bar {
+            background-color: #00123d;
+            padding: 5px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .contact-info {
+            font-size: 14px;
+        }
+        .contact-info span {
+            margin-right: 20px;
+        }
+        .contact-info a {
+            color: rgb(202, 200, 200);
+            text-decoration: none;
+        }
+        .other-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .other-links a {
+            color:white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .other-links .quote-btn {
+            background-color: red;
+            padding: 5px 10px;
+        }
+        nav {
+           
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+        }
+        nav .logo img {
+            height: 50px;
+            width: 80px;
+            object-fit: cover;
+        }
+        .nav-menu {
+            list-style-type: none;
+            display: flex;
+        }
+        .nav-menu li {
+            position: relative;
+        }
+        .nav-menu li a {
+            color: rgb(16, 15, 15);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 38px 20px;
+        }
+        i{
+            color: #555;
+        }
+        .nav-menu li a:hover {
+            color: rgb(206, 8, 8);
+            border: 1px solid rgb(252, 250, 250);
+            background-color: #f7f1f1;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
+        .nav-menu li.active a {
+            background-color: rgb(206, 8, 8);
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            border: 1px solid rgb(252, 250, 250);
+            background-color: #f7f1f1;
+        }
+        .nav-menu .dropdown:hover .dropdown-content {
+            display: block;
+            margin-top: 36px;
+        }
+        .nav-menu .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f7f1f1;
+            min-width: 200px;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px rgba(253, 252, 252, 0.2);
+        }
+        .nav-menu .dropdown-content li {
+            width: 100%;
+            list-style: none;
+        
+        }
+        .nav-menu .dropdown-content li a {
+            padding: 15px;
+            background-color: white;
+            color: rgb(7, 7, 7);
+            text-decoration: none;
+            display: block;
+        }
+        .nav-menu .dropdown-content li a:hover {
+            background-color: #f0eded;
+        }
+        i{
+            padding-left: 14px;
+            color: #555;
+        }
+        /* Add styles for the toggle button */
+        .toggle-button {
+        
+            display: none;
+            position: absolute;
+            right: 0;
+            top :25px;
+        }
+        
+        
+        /* Hide the search dropdown by default */
+        .search-dropdown {
+            display: none;
+            position: absolute;
+            top: 120px; /* Adjust based on the height of your nav */
+            right: 20px;
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 100;
+        }
+        
+        /* Style for the search input */
+        .search-input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .search-dropdown button {
+            background-color: #ff3a03;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        /* Show dropdown when 'show' class is added */
+        .show {
+            display: block;
+        }
+        
+        
+        /* Update the media queries to hide the nav menu by default on small screens */
+        @media only screen and (max-width: 768px) {
+        
+            .top-bar{
+                display: none;
+            }
+        
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+        
+               
+            }
+        
+            .nav-menu {
+                flex-direction: column;
+                align-items: flex-start;
+                display: none;
+                width: 100%;
+                height: 100vh;
+                background-color:rgb(152, 99, 127);
+            }
+        
+            .nav-menu.show {
+                background-color: none;
+                display: block; 
+            }
+            .nav-menu li  {
+                text-align: justify;
+                padding-top: 45px;
+                color: rgb(247, 243, 243);
+                text-decoration: none;
+                width: 100%;
+                color: white;
+              
+            }
+            .nav-menu li a{
+                width: 100%;
+            }
+            .nav-menu li a:hover {
+                color: rgb(243, 247, 246);
+                background:none;
+                border: none;
+                width: 100%;
+                text-decoration: underline;
+                text-underline-offset: 10px;
+            }
+            .nav-menu li.active a{
+              border: none;
+              background: none;
+            }
+            .toggle-button {
+                display: block;
+                border: none;
+                padding: 10px 15px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: white;
+            }
+           
+            
+            .toggle-button i {
+                font-size: 24px; /* adjust the icon size */
+            }
+        
+        #search-icon{
+          color: white;
+          font-size: 20px;
+        }
+        .search-dropdown {
+            position: absolute;
+            top: 70px; 
+            padding: 2px;/* Adjust based on the height of your nav */
+        }
+        .search-input {
+           
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .search-dropdown button {
+            background-color: #ff3a03;
+            color: white;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        }
+
+
+
+        /* Basic Reset */
+        .breadcrumb {
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid rgb(152, 152, 152);
+            width: 100%;
+            height: 70px;
+            background-color: #e0e0e0;
+            padding: 20px;
+        }
+        
+        .breadcrumb div{
+            font-size: large;
+            font-family:fantasy;
+            text-decoration: none;
+            color: #616060;
+            
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: none;
+        }
+    
+    h2{
+        font-size: 35px;
+        color: #020202;
+        text-align: center;
+        margin-top: 45px;
+    }
+       .container2 {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 50px;
+    }
+   
+    .social-icons {
+        display: flex;
+        gap: 10px;
+       float: right;
+       margin-right: 10px;
+    }
+    .social-icons a {
+        color: #fff;
+        border: 1 solid rgb(0, 0, 0);
+        width: 40px;
+        padding-top: 5px;
+        height: 30px;
+        background-color: rgba(205, 136, 32);
+        text-decoration: none;
+    }
+    .social-icons i{
+        color: white;
+    }
+    .form {
+        width: 40%;
+    }
+  
+    .form-group  {
+        display: block;
+        margin-bottom: 20px;
+      
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #0d0d0d;
+        background-color: white;
+        color: #9a9999;
+        
+    }
+    .form-group textarea {
+        height: 150px;
+    }
+    .buton {
+      border: 1px solid black;
+      color: white;
+      width: 80px;
+      height: 40px;
+      background-color: #020202;
+    }
+    .buton:hover {
+      background-color: red;
+     color: white;
+      
+      }
+      @media only screen and (max-width: 768px) {
+        .container2{
+            display: block;
+        }
+        .contact-info h3,
+        .contact-info p {
+            width: 250px;
+            font-size: 16px; /* Adjust font sizes for smaller screens */
+        }
+        .form {
+            margin-top: 30px ;
+            margin-right: 10px;
+         
+         
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width:  300px;
+             font-size: 14px; 
+            padding-right: 20px;
+            /* Adjust font size for smaller screens */
+        }
+    }
+        .message-icon, .phone-icon {
+            position: fixed;
+            top: 250px;
+            right: 10px;
+            color: #fff;
+            border: 1px solid red;
+            background-color: #f80b0b;
+            width: 50px;
+            height: 60px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .message-icon {
+            top: 300px; /* Adjust top position for message icon */
+        }
+        
+        .phone-icon i, .message-icon i {
+            font-size: 20px;
+            padding-top: 20px;
+            color: white;
+        }
+        .send-message-button {
+            position: fixed;
+            bottom: 150px;
+            right:  10px;
+            background-color: green;
+            color: #fff;
+            border: none;
+            border-radius: 15px 20px;
+            padding: 40px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            writing-mode: vertical-rl;
+        }
+            footer {
+                margin-top: 45px;
+                background-color: #0e0b34; /* Dark background similar to your image */
+                color: white;
+                padding: 20px 0;
+                text-align: center;
+                font-size: 0.9em;
+            }
+            
+            .footer-links {
+                margin-bottom: 10px;
+            }
+            
+            .footer-links span {
+                margin-right: 10px;
+                font-weight: bold;
+            }
+            
+            .footer-links a {
+                color: #fff;
+                margin: 0 8px;
+                text-decoration: none;
+            }
+            
+            .footer-links a:hover {
+                text-decoration: underline;
+            }
+            
+            .copyright p {
+                margin: 0;
+            }
+            
+            
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="contact-info">
+                <span>Mail us: <a href="mailto:inquiry@uninak.com">inquiry@uninak.com</a></span>
+                <span>Tel us: +86-755-28397030</span>
+            </div>
+            <div class="other-links">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <button style="color: #000;background-color:red;padding:3px;color:rgb(5, 4, 4)">Get A  Quote</button>
+            </div>
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="./public/image/WhatsApp Image 2024-09-18 at 12.50.29 PM.jpeg" alt="Uninak" title="Uninak">
+            </div>
+            <ul class="nav-menu">
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="./product.html">Product <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">LED Displays</a></li>
+                        <li><a href="#">Outdoor Screens</a></li>
+                        <li><a href="#">Digital Billboards</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">News</a></li>
+                <li class="dropdown">
+                    <a href="#">Showcase     <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Gallery</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Contact Us  <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Contact Form</a></li>
+                        <li><a href="#">Customer Support</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">LED Accessories <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Naovastar</a></li>
+                        <li><a href="#">Huidku</a></li>
+                        <li><a href="#">Electric-power box</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="quote">Get a Quote</a></li>
+                <li><a href="#" class="quote">Guest visits</a></li>
+                
+                <li class="search-icon">
+                    <i class="fas fa-search" id="searchIcon"></i>
+                </li>
+            </ul>
+            <button class="toggle-button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Hidden Search Dropdown -->
+         <div class="search-dropdown" id="searchDropdown">
+        <input type="text" placeholder="Search..." class="search-input">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+        </nav>
+    </header>
+    <div class="breadcrumb">
+        <div>Get a Quote & Cutting Edge LED Solutions Custom</div>
+        <div>Home > Products > Get a Quote & Cutting Edge LED Solutions Custom</div>
+    </div>
+<div>
+<div>
+    <h2>
+        Get a Quote & Cutting Edge LED Solutions Custom
+    </h2>
+</div>
+</div>
+<div class="container2">
+    <div class="form">
+        <form action="#" method="post">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Your Name (required)">
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Your Email (required)">
+            </div>
+            <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="Your Subject">
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Please fill in the details"></textarea>
+            </div>
+            <button type="submit"  class="buton">Submit</button>
+        </form>
+    </div>
+</div>
+<div class="social-icons">
+    <a href="#" target="_blank" style="background-color: rgba(0, 0, 255, 0.893);"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" target="_blank" style="background-color: rgba(0, 30, 255, 0.804);"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" target="_blank" style="background-color: rgb(17, 130, 7);"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" target="_blank" style="background-color: rgba(10, 155, 143, 0.893);"><i class="fab fa-twitter"></i></a>
+</div>
+</div>
+    <div class="phone-icon">
+        <i class="fas fa-phone-alt"></i>
+    </div>
+    <div class="message-icon">
+        <i class="fa-brands   
+        fa-whatsapp"></i>
+
+    </div>
+    <button class="send-message-button">發送訊息</button>
+   
+    </div>
+    <footer>
+        <div class="footer-links">
+            <span>Links:</span>
+            <a href="#">novastar</a>
+            <a href="#">huidu</a>
+            <a href="#">linsn</a>
+            <a href="#">colorlight</a>
+            <a href="#">kystar</a>
+            <a href="#">mooncell</a>
+            <a href="#">ledok</a>
+            <a href="#">onbonbx</a>
+            <a href="#">mydled</a>
+            <a href="#">T-brisun</a>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2021 Uninak Vision All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+       
+    </script>
+    <script src="./myscript.js"></script>
+
+</body>
+</html>

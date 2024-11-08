@@ -57,9 +57,77 @@ searchIcon.addEventListener('click', () => {
     searchDropdown.classList.toggle('show');
 });
 
-// Close the search dropdown when clicking outside
-document.addEventListener('click', (event) => {
-    if (!searchIcon.contains(event.target) && !searchDropdown.contains(event.target)) {
-        searchDropdown.classList.remove('show');
+const itemsPerPage = 7; // Number of items to show per page
+const productItems = document.querySelectorAll('.product-item'); // Select all product items
+const totalPages = Math.ceil(productItems.length / itemsPerPage); // Calculate total number of pages
+
+function goToPage(pageNumber) {
+    // Hide all product items initially
+    productItems.forEach(item => item.classList.add('hidden'));
+
+    // Calculate the start and end index for items to show on this page
+    const startIndex = (pageNumber - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    // Show only the items for the current page
+    for (let i = startIndex; i < endIndex && i < productItems.length; i++) {
+        productItems[i].classList.remove('hidden');
     }
+
+    // Update active class for pagination buttons
+    document.querySelectorAll('.pagination button').forEach(button => button.classList.remove('active'));
+    document.querySelector(`.pagination button:nth-child(${pageNumber})`).classList.add('active');
+}
+
+// Initialize by showing the first page
+goToPage(1);
+ // Load products.json file and populate the product grid
+ async function loadProducts() {
+    const response = await fetch('products.json'); // Load JSON file
+    const products = await response.json();
+    displayProducts(products);
+}
+
+// Function to display products in the grid
+function displayProducts(products) {
+    const productGrid = document.getElementById('product-grid');
+    productGrid.innerHTML = ''; // Clear the grid before displaying
+
+    // Loop through products and create HTML elements
+    products.forEach(product => {
+        const productItem = document.createElement('div');
+        productItem.classList.add('product-item');
+        productItem.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <p>${product.name}</p>
+        `;
+        productGrid.appendChild(productItem);
+    });
+}
+
+// Filter products based on selected category
+async function filterProducts(category) {
+    const response = await fetch('products.json');
+    const products = await response.json();
+    
+    // Filter products by category and display the filtered products
+    const filteredProducts = products.filter(product => product.category === category);
+    displayProducts(filteredProducts);
+
+   // Set and display the category description
+   const categoryDescription = document.getElementById('category-description');
+   const description = filteredProducts.length > 0 ? filteredProducts[0].description : "No products found.";
+   categoryDescription.textContent = description;
+}
+// Attach click event listeners to sidebar links
+document.querySelectorAll('.sidebar ul li a').forEach(link => {
+    link.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        const category = this.dataset.category;
+        filterProducts(category); // Filter products by clicked category
+    });
 });
+
+// Initialize the page by loading all products
+loadProducts();
